@@ -1,5 +1,5 @@
 
-FROM php:latest
+FROM php:7.3-fpm
 
 RUN apt-get install libsodium-dev -y
 
