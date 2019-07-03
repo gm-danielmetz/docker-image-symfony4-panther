@@ -1,11 +1,9 @@
 
-FROM php:7.3-fpm-alpine
+FROM php:7.3-fpm
 
-RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql
+RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium zip unzip && docker-php-ext-install sodium zip json pdo pdo_mysql
 
 ENV PANTHER_NO_SANDBOX 1
-
-RUN apt-get -y install zip unzip
 
 # ⚡️ Composer
 RUN curl -sS https://getcomposer.org/installer | php
