@@ -1,7 +1,10 @@
 
 FROM php:latest
 
-RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql
+RUN apt-get install libsodium-dev -y
+
+RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql sodium
+
 ENV PANTHER_NO_SANDBOX 1
 
 RUN apt-get -y install zip unzip
