@@ -1,11 +1,9 @@
 
-FROM php:7.3-stretch
+FROM php:latest
 
 RUN apt-get update
 RUN apt-get install -y libzip-dev zlib1g-dev chromium zip unzip
 RUN docker-php-ext-install zip json pdo pdo_mysql
-
-RUN php -i
 
 ENV PANTHER_NO_SANDBOX 1
 
