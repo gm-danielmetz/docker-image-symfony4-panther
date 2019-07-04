@@ -1,5 +1,5 @@
 
-FROM php:7.3-fpm
+FROM php:7.3-stretch
 
 RUN apt-get update
 RUN apt-get install -y libzip-dev zlib1g-dev chromium zip unzip
