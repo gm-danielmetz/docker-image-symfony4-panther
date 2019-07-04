@@ -1,11 +1,10 @@
 
 FROM php:latest
 
-RUN apt-get update
-RUN apt-get install -y libzip-dev zlib1g-dev chromium zip unzip
-RUN docker-php-ext-install zip json pdo pdo_mysql
-
+RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql
 ENV PANTHER_NO_SANDBOX 1
+
+RUN apt-get -y install zip unzip
 
 # ⚡️ Composer
 RUN curl -sS https://getcomposer.org/installer | php
