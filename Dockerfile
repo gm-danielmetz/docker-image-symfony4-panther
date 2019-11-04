@@ -3,6 +3,7 @@ FROM php:latest
 
 RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql
 ENV PANTHER_NO_SANDBOX 1
+ENV PANTHER_CHROME_DRIVER_BINARY /usr/bin/chromedriver
 
 RUN apt-get -y install zip unzip
 
