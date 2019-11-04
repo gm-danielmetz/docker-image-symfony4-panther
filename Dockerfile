@@ -2,7 +2,7 @@
 FROM php:latest
 
 RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev chromium && docker-php-ext-install zip json pdo pdo_mysql
-RUN dpkg -i google-chrome-stable_current_i386.deb
+RUN apt-get update
 ENV PANTHER_NO_SANDBOX 1
 
 RUN apt-get -y install zip unzip
