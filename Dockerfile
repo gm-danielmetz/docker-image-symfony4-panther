@@ -17,7 +17,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
 RUN npm install npm@6.4.0 -g
-RUN sudo npm -g install chromedriver
+RUN npm -g install chromedriver
 RUN ln -sf /usr/lib/node_modules/chromedriver/lib/chromedriver/chromedriver ~/bin/chromedriver
 
 # ⚡️ Yarn
