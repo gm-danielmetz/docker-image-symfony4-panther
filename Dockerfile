@@ -18,7 +18,6 @@ RUN bash nodesource_setup.sh
 RUN apt-get install nodejs -y
 RUN npm install npm@6.4.0 -g
 RUN npm -g install chromedriver
-RUN ln -sf /usr/lib/node_modules/chromedriver/lib/chromedriver/chromedriver ~/bin/chromedriver
 
 # ⚡️ Yarn
 RUN npm install -g yarn
