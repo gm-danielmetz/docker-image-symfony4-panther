@@ -7,6 +7,9 @@ ENV PANTHER_CHROME_DRIVER_BINARY /usr/bin/chromedriver
 
 RUN apt-get -y install zip unzip
 
+# ⚡️ Symfony
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+
 # ⚡️ Xdebug
 RUN yes | pecl install xdebug \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
