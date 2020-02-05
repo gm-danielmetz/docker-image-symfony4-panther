@@ -11,7 +11,7 @@ RUN apt-get -y install zip unzip
 RUN apt search wget
 RUN apt-get install wget -y
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN export PATH="$HOME/.symfony/bin:$PATH"
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
 # ⚡️ Xdebug
 RUN yes | pecl install xdebug \
@@ -37,3 +37,5 @@ RUN npm install npm@6.4.0 -g
 
 # ⚡️ Yarn
 RUN npm install -g yarn
+
+RUN symfony -V
