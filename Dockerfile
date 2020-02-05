@@ -9,8 +9,9 @@ RUN apt-get -y install zip unzip
 
 # ⚡️ Symfony
 RUN apt search wget
-RUN apt-get install wget
+RUN apt-get install wget -y
 RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN export PATH="$HOME/.symfony/bin:$PATH"
 
 # ⚡️ Xdebug
 RUN yes | pecl install xdebug \
