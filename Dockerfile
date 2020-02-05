@@ -8,6 +8,7 @@ ENV PANTHER_CHROME_DRIVER_BINARY /usr/bin/chromedriver
 RUN apt-get -y install zip unzip
 
 # ⚡️ Symfony
+RUN apt-get install wget
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 
 # ⚡️ Xdebug
