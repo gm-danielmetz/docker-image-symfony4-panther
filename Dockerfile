@@ -6,6 +6,7 @@ ENV PANTHER_NO_SANDBOX 1
 ENV PANTHER_CHROME_DRIVER_BINARY /usr/bin/chromedriver
 
 RUN apt-get -y install zip unzip
+RUN apt-get install -y -qq git 
 
 # ⚡️ Symfony
 RUN apt search wget
