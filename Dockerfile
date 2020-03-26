@@ -1,7 +1,7 @@
 
 FROM php:latest
 
-RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev g++ chromium chromium-driver && docker-php-ext-install zip json pdo pdo_mysql \
+RUN apt-get update && apt-get install -y libzip-dev zlib1g-dev libicu-dev g++ chromium chromium-driver && docker-php-ext-install zip json pdo pdo_mysql \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl
 ENV PANTHER_NO_SANDBOX 1
